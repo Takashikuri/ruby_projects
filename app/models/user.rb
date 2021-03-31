@@ -10,4 +10,6 @@ class User < ApplicationRecord
                                       length: { minimum: 8, maximum: 32 },
                                       format: { with: /\A[a-z0-9]+\z/i }
     has_secure_password
+    
+    has_many :topics
 end
