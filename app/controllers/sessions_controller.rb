@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
-      log_in user
+      log_in user        #log_inメソッドでuser_idを代入している
       redirect_to root_path, success: 'ログインに成功しました'
     else
       flash.now[:danger] = 'ログインに失敗しました'

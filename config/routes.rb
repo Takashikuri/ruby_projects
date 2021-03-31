@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'topics/new'
+  # get 'topics/new'
   get 'sessions/new'
     #get 'users/new'
   # get 'pages/index'
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'pages/help'
   #get 'pages/link'
   resources :users
-  resources :topic
+  resources :topics
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

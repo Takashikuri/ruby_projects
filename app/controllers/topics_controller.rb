@@ -1,6 +1,14 @@
 class TopicsController < ApplicationController
+  def index
+    @topics = Topic.all
+  end
+  
   def new
+    if logged_in?
     @topic = Topic.new
+    else
+    redirect_to login_path
+    end
   end
   
   def create
@@ -18,4 +26,12 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:image, :description)
   end
+  # def login_check
+  #   unless user_signed_in?
+  #     flash[:alart] = 'ログインしてください'
+  #     redirect_to root_path
+  #   end
+  # end
+  
+  # before_action :login_check, only: [:new, :edit, :update, :destroy]
 end
