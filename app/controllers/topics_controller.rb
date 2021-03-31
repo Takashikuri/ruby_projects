@@ -4,11 +4,11 @@ class TopicsController < ApplicationController
   end
   
   def new
-    if logged_in?
+    # if logged_in?
     @topic = Topic.new
-    else
-    redirect_to login_path
-    end
+    # else
+    # redirect_to login_path
+    # end
   end
   
   def create
@@ -16,9 +16,9 @@ class TopicsController < ApplicationController
     
     if @topic.save
       redirect_to topics_path, success: '投稿に成功しました'
-  　else
-  　  flash.now[:danger] = "投稿に失敗しました"
-  　  render :new
+    else
+      flash.now[:danger] = "投稿に失敗しました"
+      render :new
     end
   end
   
