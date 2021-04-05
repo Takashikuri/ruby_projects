@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  # get 'topics/new'
+  # get 'comments/new'
+  # post 'comments/create'
   get 'sessions/new'
-    #get 'users/new'
-  # get 'pages/index'
-  root  'pages#index'
+  
+  root 'pages#index'
   get 'pages/help'
-  #get 'pages/link'
+ 
   resources :users
   resources :topics
   
@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  
+  # get   'comments/new'
+  # post  'comments/create'
+  resources :comments
   
 end
