@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   
   # get   'comments/new'
   # post  'comments/create'
-  resources :comments
+ resources :comments
   
 end

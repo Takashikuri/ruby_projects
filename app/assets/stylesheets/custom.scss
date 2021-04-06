@@ -107,8 +107,13 @@
       margin-left: 20px;
     }
   }
-  
- .comments-index-wrapper {
+}
+.comments-index-wrapper {
+      width: 100vw;
+      height: 100vh;
       padding-top: 120px;
-    }
+      background-color: rgba(0,0,0,0.1);
+}
+.btn-secondary {
+  float: right;
 }

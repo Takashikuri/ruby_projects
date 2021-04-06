@@ -3,9 +3,16 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">コメント</h1>
-        
+        <%= form_for @text, url: "#" do |f| %>
+          <div class="form-group">
+            <%= f.label :text %>
+            <%= f.text_area :text, class: "form-control" %>
+          </div>
+          <% if logged_in? %>
+          <%= f.submit "送信", class: "btn-secondary" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
-  
 </div>
