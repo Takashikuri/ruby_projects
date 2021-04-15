@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'hoges/index'
+  get 'hoges/new'
   # get 'comments/new'
   # post 'comments/create'
   get 'sessions/new'
@@ -17,8 +19,9 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
-  # get   'comments/new'
-  # post  'comments/create'
- resources :comments
+  get   'comments/new'
+  post  '/comments', to: 'comments#create'
+  delete  '/comments', to: 'comments#destroy'
+  # resources :comments, :only => [:new, :create, :destroy]
   
 end

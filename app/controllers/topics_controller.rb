@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users)
+   
   end
   
   def new
@@ -21,6 +22,10 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+  
+  # def show
+  #   @topic = Topic.find(params[:topic_id])
+  # end
   
   private
   def topic_params
